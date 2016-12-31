@@ -1,40 +1,13 @@
-# rpi-node-example-hello-world
+# rpi-node-slackbot
 
-A 10-minutes example on how to get a simple Node.js app up and running.
-In the end, you can point your Browser to the IP of your Pi and see a running webserver!
-
-Based on: https://docs.docker.com/examples/nodejs_web_app/
-
-## How to use in 3 steps
-### Step 1: Build the image
-
-On your Raspberry Pi you can clone this example with
+## Command
 
 ```bash
 $ git clone https://github.com/hypriot/rpi-node-example-hello-world.git
 $ cd rpi-node-example-hello-world
-```
-
-Then build the Docker image with
-
-```bash
-$ docker build -t node-hello .
-```
-
-### Step 2: Run the container
-
-Now run the container with
-
-```bash
-$ docker run -p 80:80 -d node-hello
-```
-
-### Step 3: Test it
-
-On your computer open a web browser and type `http://localhost:80` or use `curl` to connect to your the hello world container on the Pi.
-
-```bash
-curl http://ip-of-your-raspberry-pi
+$ docker build -t rpi-node-slackbot .
+$ docker run --name rpi-node-slackbot -i -t -p 80:80 -d rpi-node-slackbot
+$ docker exec -it bash
 ```
 
 ## License

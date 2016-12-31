@@ -4,10 +4,7 @@ MAINTAINER Mathias Renner <mathias@hypriot.com>
 RUN apt-get update
 RUN apt-get -y install git
 
-# Adding source files into container
-ADD src/ /src
-
-# git clone to /src 
+# git clone slackbot 
 RUN git clone https://github.com/a2-ito/rpi-slackbot.git /rpi-slackbot
 
 # Define working directory
