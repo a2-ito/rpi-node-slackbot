@@ -8,10 +8,10 @@ RUN apt-get -y install git
 ADD src/ /src
 
 # git clone to /src 
-RUN git clone https://github.com/a2-ito/rpi-slackbot.git /src/rpi-slackbot
+RUN git clone https://github.com/a2-ito/rpi-slackbot.git /rpi-slackbot
 
 # Define working directory
-WORKDIR /src
+WORKDIR /rpi-slackbot
 
 # Install app dependencies
 RUN npm install
@@ -19,11 +19,8 @@ RUN npm install
 # Install nodemon
 RUN npm install nodemon -g
 
-RUN npm -prefix /src/rpi-slackbot install /src/rpi-slackbot
-
 # Open Port 80
 EXPOSE 80
 
 # Run Node.js
-#CMD ["node", "index.js"]
-CMD ["node", "/src/rpi-slackbot/slack_bot.js"]
+CMD ["node", "slack_bot.js"]
